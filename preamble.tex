@@ -1,0 +1,59 @@
+% Thème et couleurs
+\usetheme[progressbar=frametitle]{metropolis}
+\usecolortheme{wolf}
+
+% Inclusion de packages
+\usepackage{appendixnumberbeamer}
+\usepackage{graphicx} % Pour gérer les images
+\graphicspath{{logo-import/}} % Dossier des images
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{tgheros} % Police
+\usepackage{pifont} % Les symbôle (liste, puce, items, personnalisé)
+\usepackage{fontawesome} % Pour les icônes
+\usepackage{hyperref} % Gestion des liens hypertext
+\usepackage{fancyhdr} % Gestion des entêtes et pieds de page
+
+\newcommand{\myemail}{\href{mailto:twinoussa55@gmail.com}{\faEnvelope\ \texttt{twinoussa55@gmail.com}}}
+
+
+% Gestion des polices
+% \usepackage{fontspec}
+% \setmainfont{FiraSans-Regular.ttf}[Path=fonts/,BoldFont=FiraSans-Bold.ttf,ItalicFont=FiraSans-Italic.ttf]
+% \setsansfont{FiraSans-Regular.ttf}[Path=fonts/,BoldFont=FiraSans-Bold.ttf,ItalicFont=FiraSans-Italic.ttf]
+% \setmonofont{FiraMono-Regular.ttf}[Path=fonts/,BoldFont=FiraMono-Bold.ttf]
+
+% Les numéros de bas de page
+\setbeamertemplate{footline}{
+    \hfill\texttt{\insertframenumber}/\texttt{\inserttotalframenumber}
+}
+
+% Définition du template de la page de titre
+\makeatletter
+\setbeamertemplate{title page}{
+  \begin{minipage}[b][\paperheight]{\textwidth}
+    \vfill%
+    \begin{flushright}
+      \begin{minipage}[b]{0.1\textwidth} % Ajustez la largeur de l'image (40% de la largeur de la page)
+        \includegraphics[width=\linewidth]{logo-Rennes2.png} % Utiliser la largeur du minipage
+      \end{minipage}%
+    \end{flushright}
+    \vfill%
+    % Ajouter deux images de par et dautre grace à center !
+    % \begin{center}
+    %   \includegraphics[width=0.1\textwidth]{logo-Rennes2.png} \hfill \includegraphics[width=0.2\textwidth]{muraz.jpg} % Ajuster la taille de l'image
+    % \end{center}
+    % \vfill%
+    \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+    \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
+    \usebeamertemplate*{title separator}
+    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+    \vspace*{1cm}
+    \thispagestyle{empty}
+  \end{minipage}
+}
+\makeatother
